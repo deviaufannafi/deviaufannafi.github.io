@@ -3,183 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="bg-white text-black px-4 py-2 rounded-lg shadow-md">
-  Download CV
-</a>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <title>Devi Aufannafi Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* 🎀 Fonts & Base */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
-    body {background:#fff; color:#333; overflow-x:hidden;}
-
-    section {padding:80px 10%;}
-
-    /* 🎀 Hero */
-    .hero {
-      background:#ff2d96; /* pink fanta */
-      color:#fff;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:flex-start;
-      text-align:left;
-    }
-    .hero h1 {font-size:3rem; font-weight:800;}
-    .hero h1 span {color:#ffcce0;} /* pink muda */
-    .hero p {
-      margin:20px 0;
-      background:#ffcce0;
-      color:#fff;
-      padding:5px 10px;
-      display:inline-block;
-      overflow:hidden;
-      white-space:nowrap;
-      border-radius:6px;
-      animation: typing 6s steps(60) infinite;
+    /* Animasi typing */
+    .typing {
+      overflow: hidden;
+      border-right: .15em solid white;
+      white-space: nowrap;
+      animation: typing 6s steps(80, end) infinite, blink .75s step-end infinite;
     }
     @keyframes typing {
-      0%{width:0;}
-      50%{width:100%;}
-      100%{width:0;}
+      0% { width: 0 }
+      50% { width: 100% }
+      100% { width: 0 }
     }
-    .btn {
-      margin-top:20px;
-      padding:12px 30px;
-      border:2px solid #fff;
-      background:transparent;
-      color:#fff;
-      border-radius:8px;
-      font-weight:600;
-      transition:0.3s;
-      text-decoration:none;
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white; }
     }
-    .btn:hover {background:#fff; color:#ff2d96;}
-
-    /* 🎀 About */
-    .about {
-      background:#ffe6f0;
-      text-align:left;
-      color:#333;
+    /* Scroll horizontal untuk Experience */
+    .scroll-x {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
     }
-    .about h2 {color:#fff; font-size:2.2rem; margin-bottom:20px;}
-    .about p {max-width:600px; margin-bottom:20px;}
-    .download-btn {
-      display:inline-block;
-      padding:12px 25px;
-      background:#fff;
-      color:#000;
-      font-weight:600;
-      border-radius:8px;
-      text-decoration:none;
-      transition:0.3s;
+    .scroll-x > div {
+      flex: 0 0 80%;
+      scroll-snap-align: start;
     }
-    .download-btn:hover {background:#ff99c8; color:#fff;}
-
-    /* 🎀 Experience */
-    .experience {
-      background:#cc2d78; /* pink tua */
-      color:#fff;
-    }
-    .experience h2 {font-size:2.2rem; margin-bottom:30px;}
-    .exp-slider {
-      display:flex;
-      gap:20px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      padding-bottom:20px;
-    }
-    .exp-card {
-      min-width:300px;
-      background:#ffcce0;
-      color:#333;
-      border-radius:15px;
-      padding:20px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.1);
-      transition:0.3s;
-    }
-    .exp-card:hover {transform:translateY(-5px);}
-    .exp-card h3 {margin-bottom:10px; color:#ff2d96;}
-    .exp-card p {font-size:0.9rem;}
-
-    /* 🎀 Contact */
-    .contact {
-      background:#fff;
-      text-align:center;
-    }
-    .contact h2 {color:#333; margin-bottom:20px;}
-    .socials {
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      font-size:2rem;
-    }
-    .socials a {
-      color:#ff2d96;
-      transition:0.3s;
-    }
-    .socials a:hover {color:#cc2d78; transform:scale(1.2);}
   </style>
 </head>
-<body>
+<body class="font-sans">
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Hello,</h1>
-    <h1>I am <span>Devi Aufannafi</span></h1>
-    <p>Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</p>
-    <a href="#about" class="btn">More About Me</a>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about">
-    <h2>About</h2>
-    <p>
-      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, 
-      and project management. I have experience interning on large projects and am ready to 
-      contribute to the construction industry.
+  <!-- HERO -->
+  <section class="bg-pink-600 text-left p-10 min-h-screen flex flex-col justify-center">
+    <h1 class="text-5xl text-white font-bold">Hello,</h1>
+    <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
+    <p class="typing text-lg bg-pink-500 text-white mt-4 px-2 py-1 rounded">
+      Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.
     </p>
-    <a href="CV_Devi_Aufannafi.pdf" class="download-btn" target="_blank">Download CV</a>
+    <button class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
+      More About Me
+    </button>
   </section>
 
-  <!-- Experience -->
-  <section class="experience">
-    <h2>Experience</h2>
-    <div class="exp-slider">
-      <div class="exp-card">
-        <h3>2022–2025</h3>
-        <p>
-          Sertifikasi Supervisor K3 Konstruksi Jenjang 5, Pengawas Pekerjaan Struktur Bangunan Gedung, 
-          Tekla Structure, studi lapangan proyek rusun Surakarta, pelatihan BASARNAS, studi lapangan 
-          kinerja alat berat, Sertifikasi TOEIC, seminar & kuliah umum.
-        </p>
+  <!-- ABOUT -->
+  <section class="bg-pink-200 text-left p-10">
+    <h2 class="text-3xl text-white font-bold">About</h2>
+    <p class="mt-4 text-black max-w-2xl">
+      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. 
+      I have experience interning on large projects and am ready to contribute to the construction industry.
+    </p>
+    <a href="cv.html" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-100 transition">
+      View Full CV
+    </a>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="bg-pink-500 text-white p-10">
+    <h2 class="text-3xl font-bold mb-6">Experience</h2>
+    <div class="scroll-x">
+
+      <!-- Akademik -->
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+        <h3 class="underline text-xl font-bold">Akademik</h3>
+        <p class="italic">2022-2025</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</li>
+          <li>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</li>
+          <li>Sertifikasi dan pelatihan Tekla Structure</li>
+          <li>Studi Lapangan: Rumah susun pemerintah Kota Surakarta</li>
+          <li>Bimbingan Teknis Pertolongan di Ketinggian (BASARNAS)</li>
+          <li>Studi lapangan: proyek pembangunan kampus Politeknik Maritim Negeri Indonesia</li>
+          <li>Sertifikasi TOEIC oleh LIA</li>
+          <li>Aktif seminar & kuliah umum</li>
+        </ul>
       </div>
-      <div class="exp-card">
-        <h3>2025 Internship</h3>
-        <p>
-          PT PP WIKA (KSO), 6 bulan. Menghitung pembesian, volume pekerjaan dengan Cubicost TAS (BIM), 
-          administrasi proyek, laporan harian progres, K3, QC lapangan.
-        </p>
+
+      <!-- Magang -->
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+        <h3 class="underline text-xl font-bold">Magang / Internship</h3>
+        <p class="italic">2025 - PT PP WIKA (KSO)</p>
+        <p class="italic">Durasi: 6 bulan</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Menghitung kebutuhan pembesian tulangan balok (Excel)</li>
+          <li>Menghitung volume pekerjaan dengan Cubicost TAS (BIM)</li>
+          <li>Administrasi: cetak, scan, arsip</li>
+          <li>Laporan harian progres pekerjaan</li>
+          <li>Terlibat kegiatan K3</li>
+          <li>Bantu QC dalam pengawasan mutu lapangan</li>
+        </ul>
       </div>
-      <div class="exp-card">
-        <h3>2019–2024 Part-Time</h3>
-        <p>
-          Toko Wahyu (ATK & Percetakan). Kasir, stok barang, fotocopy, print, laminating, cetak foto, 
-          pelayanan pelanggan, kebersihan toko, buka/tutup toko tiap Sabtu.
-        </p>
+
+      <!-- Part Time -->
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+        <h3 class="underline text-xl font-bold">Work Part Time</h3>
+        <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Karyawan kasir & pelayanan</li>
+          <li>Membantu pelanggan menemukan produk</li>
+          <li>Mengelola stok 100+ produk</li>
+          <li>Fotocopy, scan, laminating, print</li>
+          <li>Cetak foto & ketik permintaan</li>
+          <li>Menjaga kebersihan toko</li>
+          <li>Buka & tutup toko setiap Sabtu</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <div class="socials">
-      <a href="mailto:deviaw2106@gmail.com"><i class="ri-mail-fill"></i></a>
-      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank"><i class="ri-linkedin-fill"></i></a>
-      <a href="https://www.instagram.com/dviaw/" target="_blank"><i class="ri-instagram-fill"></i></a>
-      <a href="https://deviaufannafi.github.io/" target="_blank"><i class="ri-github-fill"></i></a>
+  <!-- CONTACT -->
+  <section class="bg-white p-10 text-center">
+    <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
+    <div class="flex justify-center gap-8 text-4xl text-pink-500">
+      <a href="mailto:DEVIAW2106@GMAIL.COM">📧</a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank">💼</a>
+      <a href="https://www.instagram.com/dviaw/" target="_blank">📷</a>
+      <a href="https://deviaufannafi.github.io/" target="_blank">💻</a>
     </div>
   </section>
 
