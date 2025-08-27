@@ -151,20 +151,33 @@
     </div>
   </section>
 
-  <!-- TYPEWRITER SCRIPT -->
-  <script>
-    const fullText = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
-    const el = document.getElementById("type-sentence");
-    let i = 0;
-    function typeNext() {
-      if (i <= fullText.length) {
-        el.textContent = fullText.slice(0, i);
-        i++;
-        setTimeout(typeNext, 45); // kecepatan ketik
-      }
-    }
-    typeNext();
-  </script>
+<!-- TYPEWRITER + HIGHLIGHT -->
+<p class="mt-2 text-white text-lg font-medium">
+  <span id="type-highlight"></span>
+</p>
 
-</body>
-</html>
+<style>
+  .highlight {
+    background: linear-gradient(120deg, #ff80ab 0%, #fce4ec 100%);
+    padding: 0 2px;
+    border-radius: 3px;
+  }
+</style>
+
+<script>
+  const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
+  const container = document.getElementById("type-highlight");
+
+  let index = 0;
+  function typeLetter() {
+    if (index < sentence.length) {
+      const span = document.createElement("span");
+      span.textContent = sentence[index];
+      span.classList.add("highlight");
+      container.appendChild(span);
+      index++;
+      setTimeout(typeLetter, 50); // kecepatan ngetik
+    }
+  }
+  typeLetter();
+</script>
