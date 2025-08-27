@@ -17,12 +17,12 @@
     .scroll-x > div {
       flex: 0 0 85%;
       scroll-snap-align: start;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s;
     }
     .scroll-x > div:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
     }
+
     /* List numbering bulat */
     ol.custom-counter { counter-reset: list; }
     ol.custom-counter li {
@@ -37,7 +37,7 @@
       position: absolute;
       left: -2rem;
       background: white;
-      color: #be185d; /* pink tua */
+      color: #be185d;
       font-weight: bold;
       border-radius: 50%;
       width: 1.5rem;
@@ -46,6 +46,7 @@
       align-items: center;
       justify-content: center;
     }
+
     /* Highlight per huruf */
     .hl-letter {
       position: relative;
@@ -62,43 +63,39 @@
       border-radius: .15em;
       z-index: -1;
     }
-    /* Cursor blinking */
-    #cursor {
+
+    /* Tombol glowing */
+    .btn-glow {
+      background: white;
+      color: #be185d;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(255,255,255,0.6);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .btn-glow:hover {
+      background: #ffe4f0;
+      box-shadow: 0 0 15px rgba(255,192,203,0.9);
+    }
+
+    /* Cursor kedip */
+    .cursor {
       display: inline-block;
       width: 2px;
       background: white;
       margin-left: 2px;
-      animation: blink 0.8s infinite;
+      animation: blink 1s infinite;
     }
     @keyframes blink {
       0%, 50%, 100% { opacity: 1; }
       25%, 75% { opacity: 0; }
     }
-    /* Tombol glow */
-    .btn-glow {
-      background: white;
-      color: #db2777;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      box-shadow: 0 0 10px rgba(255,255,255,0.8);
-      animation: glow 1.5s infinite alternate;
-      transition: transform 0.2s ease;
-      display: inline-block;
-    }
-    .btn-glow:hover {
-      transform: scale(1.05);
-    }
-    @keyframes glow {
-      from { box-shadow: 0 0 10px rgba(255,255,255,0.6); }
-      to { box-shadow: 0 0 20px rgba(255,255,255,1); }
-    }
-    /* Icon hover */
-    .icon-hover {
-      transition: transform 0.3s ease;
-    }
-    .icon-hover:hover {
-      transform: scale(1.2);
+
+    /* Background gradient */
+    .bg-gradient-pink {
+      background: linear-gradient(135deg, #fff 0%, #ffe4f0 100%);
     }
   </style>
   <!-- Favicon pake emoji -->
@@ -108,37 +105,32 @@
 
   <!-- HERO -->
   <section class="bg-pink-500 text-left p-10 min-h-screen flex flex-col justify-center">
-    <h1 class="text-5xl text-white font-bold">Hello,</h1>
-    <h1 class="text-5xl text-white font-bold">
+    <h1 class="text-3xl md:text-5xl text-white font-bold">Hello,</h1>
+    <h1 class="text-3xl md:text-5xl text-white font-bold">
       I am <span class="text-pink-200">Devi Aufannafi</span>
     </h1>
 
-    <!-- Typewriter: highlight per huruf -->
+    <!-- Typewriter -->
     <p class="mt-2 text-lg font-medium">
-      <span id="type-highlight" class="text-white"></span><span id="cursor"></span>
+      <span id="type-highlight" class="text-white"></span><span class="cursor"></span>
     </p>
 
-    <a href="#about" class="mt-6 btn-glow">
-      More About Me
-    </a>
+    <a href="#about" class="mt-6 btn-glow">More About Me</a>
   </section>
 
-  <!-- ABOUT (dibuat center) -->
+  <!-- ABOUT -->
   <section id="about" class="bg-pink-100 text-center p-10">
     <h2 class="text-3xl text-pink-900 font-bold">About</h2>
     <p class="mt-4 text-black max-w-2xl mx-auto">
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
-    <!-- Download CV -->
-    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 btn-glow">
-      Download CV
-    </a>
+    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 btn-glow">Download CV</a>
   </section>
 
   <!-- EXPERIENCE -->
   <section class="bg-pink-500 p-10">
-    <h2 class="text-3xl font-bold mb-6 text-white">Experience</h2>
+    <h2 class="text-3xl font-bold mb-6 text-pink-900">Experience</h2>
     <div class="scroll-x">
 
       <!-- Akademik -->
@@ -191,20 +183,20 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="bg-white p-10 text-left">
+  <section class="bg-gradient-pink p-10 text-left">
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
     <div class="flex gap-6">
       <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10 icon-hover" alt="Gmail">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10" alt="Gmail">
       </a>
       <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10 icon-hover" alt="LinkedIn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10" alt="LinkedIn">
       </a>
       <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10 icon-hover" alt="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10" alt="Instagram">
       </a>
       <a href="https://deviaufannafi.github.io/" target="_blank" title="GitHub">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10 icon-hover" alt="GitHub">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10" alt="GitHub">
       </a>
     </div>
   </section>
@@ -213,6 +205,7 @@
   <script>
     const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
     const container = document.getElementById("type-highlight");
+
     let i = 0;
     (function type() {
       if (i < sentence.length) {
