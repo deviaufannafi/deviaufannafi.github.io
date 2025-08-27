@@ -3,182 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <a href="CV_Devi_Aufannafi.pdf" class="download-btn" target="_blank">Download CV</a>
+  <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="bg-white text-black px-4 py-2 rounded-lg shadow-md">
+  Download CV
+</a>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Poppins', sans-serif; }
+    /* 🎀 Fonts & Base */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body {background:#fff; color:#333; overflow-x:hidden;}
 
-    /* warna */
-    :root {
-      --pink-fanta: #ff2e7e;
-      --pink-muda: #ffcce0;
-      --pink-tua: #cc1e5a;
-      --putih: #ffffff;
-      --hitam: #222;
-    }
+    section {padding:80px 10%;}
 
-    /* hero */
+    /* 🎀 Hero */
     .hero {
-      background-color: var(--pink-fanta);
-      color: var(--putih);
-      padding: 120px 60px;
-      text-align: left;
+      background:#ff2d96; /* pink fanta */
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:flex-start;
+      text-align:left;
     }
-    .hero h1 { font-size: 60px; margin: 0; }
-    .hero h2 { font-size: 40px; margin: 5px 0; }
-    .hero h2 span { color: var(--pink-muda); }
-    .moving-text {
-      display: inline-block;
-      background: var(--pink-tua);
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 18px;
-      animation: move 6s linear infinite;
+    .hero h1 {font-size:3rem; font-weight:800;}
+    .hero h1 span {color:#ffcce0;} /* pink muda */
+    .hero p {
+      margin:20px 0;
+      background:#ffcce0;
+      color:#fff;
+      padding:5px 10px;
+      display:inline-block;
+      overflow:hidden;
+      white-space:nowrap;
+      border-radius:6px;
+      animation: typing 6s steps(60) infinite;
     }
-    @keyframes move {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(20px); }
-      100% { transform: translateX(0); }
+    @keyframes typing {
+      0%{width:0;}
+      50%{width:100%;}
+      100%{width:0;}
     }
     .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      border: 2px solid var(--putih);
-      border-radius: 8px;
-      color: var(--putih);
-      text-decoration: none;
-      font-weight: bold;
+      margin-top:20px;
+      padding:12px 30px;
+      border:2px solid #fff;
+      background:transparent;
+      color:#fff;
+      border-radius:8px;
+      font-weight:600;
+      transition:0.3s;
+      text-decoration:none;
     }
+    .btn:hover {background:#fff; color:#ff2d96;}
 
-    /* about */
+    /* 🎀 About */
     .about {
-      background: var(--pink-muda);
-      color: var(--hitam);
-      padding: 100px 60px;
-      text-align: left;
+      background:#ffe6f0;
+      text-align:left;
+      color:#333;
     }
-    .about h2 { color: var(--putih); font-size: 36px; margin-bottom: 20px; }
-    .about p { max-width: 700px; font-size: 18px; }
+    .about h2 {color:#fff; font-size:2.2rem; margin-bottom:20px;}
+    .about p {max-width:600px; margin-bottom:20px;}
     .download-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: var(--putih);
-      color: var(--hitam);
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
+      display:inline-block;
+      padding:12px 25px;
+      background:#fff;
+      color:#000;
+      font-weight:600;
+      border-radius:8px;
+      text-decoration:none;
+      transition:0.3s;
     }
+    .download-btn:hover {background:#ff99c8; color:#fff;}
 
-    /* experience slider */
+    /* 🎀 Experience */
     .experience {
-      background: var(--pink-tua);
-      color: var(--putih);
-      padding: 80px 40px;
+      background:#cc2d78; /* pink tua */
+      color:#fff;
     }
-    .experience h2 { text-align: left; margin-bottom: 20px; }
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding-bottom: 10px;
+    .experience h2 {font-size:2.2rem; margin-bottom:30px;}
+    .exp-slider {
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding-bottom:20px;
     }
-    .slider::-webkit-scrollbar { display: none; }
-    .card {
-      flex: 0 0 300px;
-      background: var(--pink-muda);
-      color: var(--hitam);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    .exp-card {
+      min-width:300px;
+      background:#ffcce0;
+      color:#333;
+      border-radius:15px;
+      padding:20px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+      transition:0.3s;
     }
-    .card h3 { margin-top: 0; }
+    .exp-card:hover {transform:translateY(-5px);}
+    .exp-card h3 {margin-bottom:10px; color:#ff2d96;}
+    .exp-card p {font-size:0.9rem;}
 
-    /* contact */
+    /* 🎀 Contact */
     .contact {
-      background: var(--putih);
-      padding: 60px;
-      text-align: left;
+      background:#fff;
+      text-align:center;
     }
-    .contact h2 { color: var(--hitam); margin-bottom: 20px; }
-    .icons {
-      display: flex;
-      gap: 25px;
+    .contact h2 {color:#333; margin-bottom:20px;}
+    .socials {
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      font-size:2rem;
     }
-    .icons a img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.2s;
+    .socials a {
+      color:#ff2d96;
+      transition:0.3s;
     }
-    .icons a img:hover {
-      transform: scale(1.2);
-    }
+    .socials a:hover {color:#cc2d78; transform:scale(1.2);}
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
     <h1>Hello,</h1>
-    <h2>I am <span>Devi Aufannafi</span></h2>
-    <div class="moving-text">Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</div>
-    <br>
+    <h1>I am <span>Devi Aufannafi</span></h1>
+    <p>Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</p>
     <a href="#about" class="btn">More About Me</a>
   </section>
 
-  <!-- ABOUT -->
+  <!-- About -->
   <section class="about" id="about">
     <h2>About</h2>
-    <p>I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. I have experience interning on large projects and am ready to contribute to the construction industry.</p>
-    <a href="cv.pdf" class="download-btn" download>Download CV</a>
+    <p>
+      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, 
+      and project management. I have experience interning on large projects and am ready to 
+      contribute to the construction industry.
+    </p>
+    <a href="CV_Devi_Aufannafi.pdf" class="download-btn" target="_blank">Download CV</a>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- Experience -->
   <section class="experience">
     <h2>Experience</h2>
-    <div class="slider">
-      <div class="card">
+    <div class="exp-slider">
+      <div class="exp-card">
         <h3>2022–2025</h3>
-        <p>Sertifikasi Supervisor K3 Konstruksi Jenjang 5<br>
-        Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5<br>
-        Sertifikasi dan pelatihan Tekla Structure<br>
-        Studi Lapangan Proyek Rusun Surakarta<br>
-        Bimtek Pertolongan Ketinggian BASARNAS<br>
-        Studi Lapangan Kinerja Alat Berat Polimarin<br>
-        Sertifikasi TOEIC LIA<br>
-        Seminar & Kuliah Umum</p>
+        <p>
+          Sertifikasi Supervisor K3 Konstruksi Jenjang 5, Pengawas Pekerjaan Struktur Bangunan Gedung, 
+          Tekla Structure, studi lapangan proyek rusun Surakarta, pelatihan BASARNAS, studi lapangan 
+          kinerja alat berat, Sertifikasi TOEIC, seminar & kuliah umum.
+        </p>
       </div>
-      <div class="card">
-        <h3>2025 – Magang PT PP WIKA (KSO)</h3>
-        <p>Durasi 6 bulan<br>
-        Hitung kebutuhan pembesian & volume dengan Excel + Cubicost TAS<br>
-        Administrasi dokumen proyek<br>
-        Laporan progres harian<br>
-        Kegiatan K3 di lapangan<br>
-        QC dan pengawasan mutu</p>
+      <div class="exp-card">
+        <h3>2025 Internship</h3>
+        <p>
+          PT PP WIKA (KSO), 6 bulan. Menghitung pembesian, volume pekerjaan dengan Cubicost TAS (BIM), 
+          administrasi proyek, laporan harian progres, K3, QC lapangan.
+        </p>
       </div>
-      <div class="card">
-        <h3>2019–2024 Part Time</h3>
-        <p>Toko Wahyu (ATK & Percetakan)<br>
-        Melayani transaksi kasir<br>
-        Membantu pelanggan menemukan produk<br>
-        Mengatur stok 100+ produk<br>
-        Fotocopy, scan, laminating, print<br>
-        Cetak foto & ketik dokumen<br>
-        Kebersihan & keteraturan toko</p>
+      <div class="exp-card">
+        <h3>2019–2024 Part-Time</h3>
+        <p>
+          Toko Wahyu (ATK & Percetakan). Kasir, stok barang, fotocopy, print, laminating, cetak foto, 
+          pelayanan pelanggan, kebersihan toko, buka/tutup toko tiap Sabtu.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Contact -->
   <section class="contact">
     <h2>Contact Me</h2>
-    <div class="icons">
-      <a href="mailto:deviaw2106@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
-      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-      <a href="https://www.instagram.com/dviaw/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-      <a href="https://deviaufannafi.github.io/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
+    <div class="socials">
+      <a href="mailto:deviaw2106@gmail.com"><i class="ri-mail-fill"></i></a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank"><i class="ri-linkedin-fill"></i></a>
+      <a href="https://www.instagram.com/dviaw/" target="_blank"><i class="ri-instagram-fill"></i></a>
+      <a href="https://deviaufannafi.github.io/" target="_blank"><i class="ri-github-fill"></i></a>
     </div>
   </section>
 
