@@ -1,36 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>👷‍♀️ Hi, I'm Devi Aufannafi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devi Aufannafi Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Animasi berjalan */
-    .marquee {
-      overflow: hidden;
-      position: relative;
-      height: 2rem;
-    }
-    .marquee p {
-      display: inline-block;
-      position: absolute;
-      white-space: nowrap;
-      animation: marquee 10s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0%); }
-      to { transform: translateX(-60%); } /* berhenti cukup sebelum pojok */
-    }
-
     /* Scroll horizontal untuk Experience */
     .scroll-x {
       display: flex;
@@ -43,11 +18,8 @@
       flex: 0 0 85%;
       scroll-snap-align: start;
     }
-
     /* List numbering bulat */
-    ol.custom-counter {
-      counter-reset: list;
-    }
+    ol.custom-counter { counter-reset: list; }
     ol.custom-counter li {
       counter-increment: list;
       position: relative;
@@ -77,9 +49,10 @@
   <section class="bg-pink-500 text-left p-10 min-h-screen flex flex-col justify-center">
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
     <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
-    <div class="marquee mt-4 bg-pink-400 text-white px-2 py-1 rounded w-[90%] max-w-2xl">
-      <p>Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</p>
-    </div>
+
+    <!-- Typewriter per huruf + background ikut -->
+    <span id="type-sentence" class="inline-block mt-4 bg-pink-400 text-white px-2 py-1 rounded text-lg"></span>
+
     <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
       More About Me
     </a>
@@ -89,21 +62,22 @@
   <section id="about" class="bg-pink-100 text-left p-10">
     <h2 class="text-3xl text-pink-900 font-bold">About</h2>
     <p class="mt-4 text-black max-w-2xl">
-      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. 
+      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
+    <!-- Buka CV di browser (bukan force download) -->
     <a href="cv.html" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-200 transition">
-      View CV in Browser
+      Download CV
     </a>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="bg-pink-500 text-white p-10">
-    <h2 class="text-3xl font-bold mb-6">Experience</h2>
+  <section class="bg-pink-500 p-10">
+    <h2 class="text-3xl font-bold mb-6 text-black">Experience</h2>
     <div class="scroll-x">
 
       <!-- Akademik -->
-      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg text-white">
         <h3 class="underline text-xl font-bold">Akademik</h3>
         <p class="italic">2022-2025</p>
         <ol class="custom-counter mt-2 space-y-1">
@@ -119,7 +93,7 @@
       </div>
 
       <!-- Magang -->
-      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg text-white">
         <h3 class="underline text-xl font-bold">Magang / Internship</h3>
         <p class="italic">2025 - PT PP WIKA (KSO)</p>
         <p class="italic">Durasi: 6 bulan</p>
@@ -134,11 +108,12 @@
       </div>
 
       <!-- Part Time -->
-      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg text-white">
         <h3 class="underline text-xl font-bold">Work Part Time</h3>
         <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
+        <!-- Posisi di luar penomoran -->
+        <p class="italic mb-2">Karyawan</p>
         <ol class="custom-counter mt-2 space-y-1">
-          <li>Karyawan</li>
           <li>Melayani transaksi menggunakan mesin kasir</li>
           <li>Membantu pelanggan menemukan produk yang dicari sesuai kebutuhan</li>
           <li>Mengatur dan mengelola stok lebih dari 100 produk</li>
@@ -154,21 +129,36 @@
   <!-- CONTACT -->
   <section class="bg-white p-10 text-left">
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
-    <div class="flex gap-6 text-5xl">
+    <div class="flex gap-6">
       <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10" alt="Gmail">
       </a>
       <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10" alt="LinkedIn">
       </a>
       <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10" alt="Instagram">
       </a>
       <a href="https://deviaufannafi.github.io/" target="_blank" title="GitHub">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10" alt="GitHub">
       </a>
     </div>
   </section>
+
+  <!-- TYPEWRITER SCRIPT -->
+  <script>
+    const fullText = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
+    const el = document.getElementById("type-sentence");
+    let i = 0;
+    function typeNext() {
+      if (i <= fullText.length) {
+        el.textContent = fullText.slice(0, i);
+        i++;
+        setTimeout(typeNext, 35); // kecepatan ketik per huruf
+      }
+    }
+    typeNext();
+  </script>
 
 </body>
 </html>
