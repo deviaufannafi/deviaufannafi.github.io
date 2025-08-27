@@ -41,8 +41,24 @@
       align-items: center;
       justify-content: center;
     }
+    /* Highlight per huruf */
+    .hl-letter {
+      position: relative;
+      display: inline-block;
+      padding: 0 .02em;
+    }
+    .hl-letter::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0.05em;
+      height: 0.6em;
+      background: #ffd1e6;
+      border-radius: .15em;
+      z-index: -1;
+    }
   </style>
-  <!-- Favicon pake emoji 👷‍♀️ -->
+  <!-- Favicon pake emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷‍♀️</text></svg>">
 </head>
 <body class="font-sans bg-pink-50 scroll-smooth">
@@ -50,12 +66,13 @@
   <!-- HERO -->
   <section class="bg-pink-500 text-left p-10 min-h-screen flex flex-col justify-center">
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
-    <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
+    <h1 class="text-5xl text-white font-bold">
+      I am <span class="text-pink-200">Devi Aufannafi</span>
+    </h1>
 
-    <!-- TYPEWRITER + STABILO BLOK -->
-    <p class="mt-2 text-lg font-medium inline-block relative px-2 py-1 rounded">
-      <span class="highlight-block absolute inset-0 rounded"></span>
-      <span id="type-highlight" class="relative text-black"></span>
+    <!-- Typewriter: highlight per huruf -->
+    <p class="mt-2 text-lg font-medium">
+      <span id="type-highlight" class="text-white"></span>
     </p>
 
     <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
@@ -63,10 +80,10 @@
     </a>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="bg-pink-100 text-left p-10">
+  <!-- ABOUT (dibuat center) -->
+  <section id="about" class="bg-pink-100 text-center p-10">
     <h2 class="text-3xl text-pink-900 font-bold">About</h2>
-    <p class="mt-4 text-black max-w-2xl">
+    <p class="mt-4 text-black max-w-2xl mx-auto">
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
@@ -89,11 +106,11 @@
           <li>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</li>
           <li>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</li>
           <li>Sertifikasi dan pelatihan Tekla Structure</li>
-          <li>Melakukan Studi Lapangan pada proyek pembangunan rumah susun pemerintah Kota Surakarta untuk analisis produktivitas dan tenaga kerja</li>
-          <li>Bimbingan Teknis Pertolongan di Ketinggian oleh Badan Nasional Pencarian dan Pertolongan (BASARNAS)</li>
-          <li>Melakukan studi lapangan untuk mengukur kinerja alat berat dalam proyek pembangunan kampus baru Politeknik Maritim Negeri Indonesia</li>
+          <li>Melakukan Studi Lapangan pada proyek pembangunan rumah susun pemerintah Kota Surakarta</li>
+          <li>Bimbingan Teknis Pertolongan di Ketinggian oleh BASARNAS</li>
+          <li>Studi lapangan kinerja alat berat pada proyek kampus baru Politeknik Maritim Negeri Indonesia</li>
           <li>Sertifikasi TOEIC oleh Lembaga Bahasa LIA</li>
-          <li>Aktif mengikuti seminar dan kuliah umum (Public speaking, Penerapan Aplikasi IPTEK Nuklir, dll)</li>
+          <li>Aktif mengikuti seminar & kuliah umum</li>
         </ol>
       </div>
 
@@ -103,12 +120,12 @@
         <p class="italic">2025 - PT PP WIKA (KSO)</p>
         <p class="italic">Durasi: 6 bulan</p>
         <ol class="custom-counter mt-2 space-y-1">
-          <li>Menghitung kebutuhan pembesian tulangan untuk elemen struktur (balok) menggunakan Microsoft Excel</li>
-          <li>Menghitung volume pekerjaan struktur atas dan arsitektur menggunakan Cubicost TAS (BIM)</li>
-          <li>Membantu pekerjaan administrasi seperti cetak, scan, dan pengarsipan dokumen proyek</li>
-          <li>Menyusun dokumentasi untuk laporan harian progres pekerjaan</li>
-          <li>Terlibat dalam kegiatan Keselamatan dan Kesehatan Kerja (K3) sesuai arahan tim</li>
-          <li>Membantu tim QC dalam pengawasan pekerjaan di lapangan agar sesuai standar mutu</li>
+          <li>Menghitung kebutuhan pembesian tulangan (balok) dengan Excel</li>
+          <li>Menghitung volume pekerjaan dengan Cubicost TAS (BIM)</li>
+          <li>Membantu pekerjaan administrasi (cetak, scan, arsip dokumen)</li>
+          <li>Menyusun dokumentasi laporan harian progres</li>
+          <li>Ikut kegiatan K3 sesuai arahan tim</li>
+          <li>Membantu tim QC dalam pengawasan mutu di lapangan</li>
         </ol>
       </div>
 
@@ -118,13 +135,13 @@
         <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
         <p class="italic mb-2">Karyawan</p>
         <ol class="custom-counter mt-2 space-y-1">
-          <li>Melayani transaksi menggunakan mesin kasir</li>
-          <li>Membantu pelanggan menemukan produk yang dicari sesuai kebutuhan</li>
-          <li>Mengatur dan mengelola stok lebih dari 100 produk</li>
-          <li>Menyalin dokumen: fotocopy, scan, laminating, dan print</li>
-          <li>Mengerjakan pencetakan foto dan mengetik sesuai permintaan pelanggan</li>
-          <li>Menjaga kebersihan, keteraturan toko, dan tampilan produk</li>
-          <li>Membuka dan menutup toko sesuai prosedur setiap Sabtu</li>
+          <li>Melayani transaksi dengan mesin kasir</li>
+          <li>Membantu pelanggan menemukan produk</li>
+          <li>Mengelola stok lebih dari 100 produk</li>
+          <li>Fotocopy, scan, laminating, print</li>
+          <li>Pencetakan foto & pengetikan dokumen</li>
+          <li>Menjaga kebersihan dan kerapian toko</li>
+          <li>Membuka & menutup toko setiap Sabtu</li>
         </ol>
       </div>
     </div>
@@ -134,7 +151,7 @@
   <section class="bg-white p-10 text-left">
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
     <div class="flex gap-6">
-      <a href="mailto:deviaw2106@gmail.com" title="Email">
+      <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10" alt="Gmail">
       </a>
       <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
@@ -149,34 +166,27 @@
     </div>
   </section>
 
-  <!-- STYLE -->
-  <style>
-    .highlight-block {
-      background: #fbb6ce; /* warna stabilo */
-      z-index: 0;
-    }
-    #type-highlight {
-      z-index: 1;
-      position: relative;
-      font-weight: 500;
-    }
-  </style>
-
   <!-- SCRIPT TYPEWRITER -->
   <script>
     const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
     const container = document.getElementById("type-highlight");
 
-    let index = 0;
-    function typeLetter() {
-      if (index < sentence.length) {
-        container.textContent += sentence[index];
-        index++;
-        setTimeout(typeLetter, 50); // kecepatan ngetik
+    let i = 0;
+    (function type() {
+      if (i < sentence.length) {
+        const ch = sentence[i];
+        if (ch === " ") {
+          container.appendChild(document.createTextNode(" "));
+        } else {
+          const span = document.createElement("span");
+          span.className = "hl-letter";
+          span.textContent = ch;
+          container.appendChild(span);
+        }
+        i++;
+        setTimeout(type, 50);
       }
-    }
-    typeLetter();
+    })();
   </script>
-
 </body>
 </html>
