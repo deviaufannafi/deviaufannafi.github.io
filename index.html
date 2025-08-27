@@ -32,7 +32,7 @@
       position: absolute;
       left: -2rem;
       background: white;
-      color: #be185d;
+      color: #be185d; /* pink tua */
       font-weight: bold;
       border-radius: 50%;
       width: 1.5rem;
@@ -41,7 +41,7 @@
       align-items: center;
       justify-content: center;
     }
-    /* Highlight per huruf */
+    /* Highlight huruf + cursor */
     .hl-letter {
       position: relative;
       display: inline-block;
@@ -57,31 +57,30 @@
       border-radius: .15em;
       z-index: -1;
     }
-    /* Cursor */
     .cursor {
       display: inline-block;
       width: 2px;
       height: 1em;
       background: white;
       margin-left: 2px;
-      animation: blink 0.7s steps(1) infinite;
-      vertical-align: bottom;
+      animation: blink 0.8s infinite;
     }
     @keyframes blink {
-      50% { opacity: 0; }
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
-    /* Button Glow */
+    /* Tombol glow */
     .btn-glow {
       background: white;
-      color: #be185d;
+      color: #db2777;
       padding: 0.75rem 1.5rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
-      transition: 0.3s;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(219,39,119,0.6);
+      transition: all 0.3s ease;
     }
     .btn-glow:hover {
-      background: #ffe4ec;
-      box-shadow: 0 0 20px rgba(255, 192, 203, 1);
+      background: #ffe4f0;
+      box-shadow: 0 0 20px rgba(219,39,119,0.9);
     }
   </style>
   <!-- Favicon pake emoji -->
@@ -96,27 +95,22 @@
       I am <span class="text-pink-200">Devi Aufannafi</span>
     </h1>
 
-    <!-- Typewriter: highlight per huruf -->
-    <p class="mt-2 text-lg font-medium">
-      <span id="type-highlight" class="text-white"></span>
-      <span id="cursor" class="cursor"></span>
+    <!-- Typewriter -->
+    <p class="mt-2 text-lg font-medium text-white">
+      <span id="type-highlight"></span><span class="cursor"></span>
     </p>
 
-    <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
-      More About Me
-    </a>
+    <a href="#about" class="mt-6 btn-glow w-fit">More About Me</a>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="py-16 bg-pink-50 flex justify-center">
-    <div class="bg-white shadow-lg rounded-2xl p-10 max-w-2xl text-center">
-      <h2 class="text-3xl text-pink-900 font-bold">About</h2>
-      <p class="mt-4 text-black">
-        I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
-        I have experience interning on large projects and am ready to contribute to the construction industry.
-      </p>
-      <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 btn-glow inline-block">Download CV</a>
-    </div>
+  <section id="about" class="bg-pink-100 text-center p-10">
+    <h2 class="text-3xl text-pink-900 font-bold">About</h2>
+    <p class="mt-4 text-black max-w-2xl mx-auto">
+      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
+      I have experience interning on large projects and am ready to contribute to the construction industry.
+    </p>
+    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 inline-block btn-glow">Download CV</a>
   </section>
 
   <!-- EXPERIENCE -->
@@ -196,7 +190,6 @@
   <script>
     const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
     const container = document.getElementById("type-highlight");
-    const cursor = document.getElementById("cursor");
 
     let i = 0;
     (function type() {
@@ -212,8 +205,6 @@
         }
         i++;
         setTimeout(type, 50);
-      } else {
-        cursor.style.display = "inline-block";
       }
     })();
   </script>
