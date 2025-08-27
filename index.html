@@ -11,7 +11,7 @@
       overflow: hidden;
       border-right: .15em solid white;
       white-space: nowrap;
-      animation: typing 6s steps(80, end) infinite, blink .75s step-end infinite;
+      animation: typing 7s steps(80, end) infinite, blink .75s step-end infinite;
     }
     @keyframes typing {
       0% { width: 0 }
@@ -28,88 +28,115 @@
       overflow-x: auto;
       gap: 1rem;
       scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
     }
     .scroll-x > div {
-      flex: 0 0 80%;
+      flex: 0 0 85%;
       scroll-snap-align: start;
+    }
+    /* List numbering bulat */
+    ol.custom-counter {
+      counter-reset: list;
+    }
+    ol.custom-counter li {
+      counter-increment: list;
+      position: relative;
+      margin-left: 2rem;
+      margin-bottom: .5rem;
+      list-style: none;
+    }
+    ol.custom-counter li::before {
+      content: counter(list);
+      position: absolute;
+      left: -2rem;
+      background: white;
+      color: #1e40af; /* biru tua */
+      font-weight: bold;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 </head>
-<body class="font-sans">
+<body class="font-sans bg-gray-50">
 
   <!-- HERO -->
-  <section class="bg-pink-600 text-left p-10 min-h-screen flex flex-col justify-center">
+  <section class="bg-blue-600 text-left p-10 min-h-screen flex flex-col justify-center">
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
-    <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
-    <p class="typing text-lg bg-pink-500 text-white mt-4 px-2 py-1 rounded">
+    <h1 class="text-5xl text-white font-bold">I am <span class="text-blue-200">Devi Aufannafi</span></h1>
+    <p class="typing text-lg bg-blue-500 text-white mt-4 px-2 py-1 rounded">
       Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.
     </p>
-    <button class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
+    <button class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-blue-100 transition">
       More About Me
     </button>
   </section>
 
   <!-- ABOUT -->
-  <section class="bg-pink-200 text-left p-10">
-    <h2 class="text-3xl text-white font-bold">About</h2>
+  <section class="bg-blue-100 text-left p-10">
+    <h2 class="text-3xl text-blue-900 font-bold">About</h2>
     <p class="mt-4 text-black max-w-2xl">
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. 
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
-    <a href="cv.html" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-100 transition">
+    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-blue-200 transition">
       View Full CV
     </a>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="bg-pink-500 text-white p-10">
+  <section class="bg-blue-500 text-white p-10">
     <h2 class="text-3xl font-bold mb-6">Experience</h2>
     <div class="scroll-x">
 
       <!-- Akademik -->
-      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-blue-400 p-6 rounded-xl shadow-lg">
         <h3 class="underline text-xl font-bold">Akademik</h3>
         <p class="italic">2022-2025</p>
-        <ul class="list-disc ml-6 mt-2 space-y-1">
+        <ol class="custom-counter mt-2 space-y-1">
           <li>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</li>
           <li>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</li>
           <li>Sertifikasi dan pelatihan Tekla Structure</li>
-          <li>Studi Lapangan: Rumah susun pemerintah Kota Surakarta</li>
-          <li>Bimbingan Teknis Pertolongan di Ketinggian (BASARNAS)</li>
-          <li>Studi lapangan: proyek pembangunan kampus Politeknik Maritim Negeri Indonesia</li>
-          <li>Sertifikasi TOEIC oleh LIA</li>
-          <li>Aktif seminar & kuliah umum</li>
-        </ul>
+          <li>Melakukan Studi Lapangan pada proyek pembangunan rumah susun pemerintah Kota Surakarta untuk analisis produktivitas dan tenaga kerja</li>
+          <li>Bimbingan Teknis Pertolongan di Ketinggian oleh Badan Nasional Pencarian dan Pertolongan (BASARNAS)</li>
+          <li>Melakukan studi lapangan untuk mengukur kinerja alat berat dalam proyek pembangunan kampus baru Politeknik Maritim Negeri Indonesia</li>
+          <li>Sertifikasi TOEIC oleh Lembaga Bahasa LIA</li>
+          <li>Aktif mengikuti seminar dan kuliah umum (Public speaking, Penerapan Aplikasi IPTEK Nuklir, dll)</li>
+        </ol>
       </div>
 
       <!-- Magang -->
-      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-blue-400 p-6 rounded-xl shadow-lg">
         <h3 class="underline text-xl font-bold">Magang / Internship</h3>
         <p class="italic">2025 - PT PP WIKA (KSO)</p>
         <p class="italic">Durasi: 6 bulan</p>
-        <ul class="list-disc ml-6 mt-2 space-y-1">
-          <li>Menghitung kebutuhan pembesian tulangan balok (Excel)</li>
-          <li>Menghitung volume pekerjaan dengan Cubicost TAS (BIM)</li>
-          <li>Administrasi: cetak, scan, arsip</li>
-          <li>Laporan harian progres pekerjaan</li>
-          <li>Terlibat kegiatan K3</li>
-          <li>Bantu QC dalam pengawasan mutu lapangan</li>
-        </ul>
+        <ol class="custom-counter mt-2 space-y-1">
+          <li>Menghitung kebutuhan pembesian tulangan untuk elemen struktur (balok) menggunakan Microsoft Excel</li>
+          <li>Menghitung volume pekerjaan struktur atas dan arsitektur menggunakan Cubicost TAS (BIM)</li>
+          <li>Membantu pekerjaan administrasi seperti cetak, scan, dan pengarsipan dokumen proyek</li>
+          <li>Menyusun dokumentasi untuk laporan harian progres pekerjaan</li>
+          <li>Terlibat dalam kegiatan Keselamatan dan Kesehatan Kerja (K3) sesuai arahan tim</li>
+          <li>Membantu tim QC dalam pengawasan pekerjaan di lapangan agar sesuai standar mutu</li>
+        </ol>
       </div>
 
       <!-- Part Time -->
-      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-blue-400 p-6 rounded-xl shadow-lg">
         <h3 class="underline text-xl font-bold">Work Part Time</h3>
         <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
-        <ul class="list-disc ml-6 mt-2 space-y-1">
-          <li>Karyawan kasir & pelayanan</li>
-          <li>Membantu pelanggan menemukan produk</li>
-          <li>Mengelola stok 100+ produk</li>
-          <li>Fotocopy, scan, laminating, print</li>
-          <li>Cetak foto & ketik permintaan</li>
-          <li>Menjaga kebersihan toko</li>
-          <li>Buka & tutup toko setiap Sabtu</li>
-        </ul>
+        <ol class="custom-counter mt-2 space-y-1">
+          <li>Karyawan</li>
+          <li>Melayani transaksi menggunakan mesin kasir</li>
+          <li>Membantu pelanggan menemukan produk yang dicari sesuai kebutuhan</li>
+          <li>Mengatur dan mengelola stok lebih dari 100 produk</li>
+          <li>Menyalin dokumen: fotocopy, scan, laminating, dan print</li>
+          <li>Mengerjakan pencetakan foto dan mengetik sesuai permintaan pelanggan</li>
+          <li>Menjaga kebersihan, keteraturan toko, dan tampilan produk</li>
+          <li>Membuka dan menutup toko sesuai prosedur setiap Sabtu</li>
+        </ol>
       </div>
     </div>
   </section>
@@ -117,11 +144,11 @@
   <!-- CONTACT -->
   <section class="bg-white p-10 text-center">
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
-    <div class="flex justify-center gap-8 text-4xl text-pink-500">
-      <a href="mailto:DEVIAW2106@GMAIL.COM">📧</a>
-      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank">💼</a>
-      <a href="https://www.instagram.com/dviaw/" target="_blank">📷</a>
-      <a href="https://deviaufannafi.github.io/" target="_blank">💻</a>
+    <div class="flex justify-center gap-8 text-5xl">
+      <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="w-10 h-10"></a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-10 h-10"></a>
+      <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-10 h-10"></a>
+      <a href="https://deviaufannafi.github.io/" target="_blank" title="GitHub"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="w-10 h-10"></a>
     </div>
   </section>
 
