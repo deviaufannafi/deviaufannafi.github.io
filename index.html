@@ -41,17 +41,8 @@
       align-items: center;
       justify-content: center;
     }
-    /* Favicon emoji 👷‍♀️ */
-    link[rel="icon"]::after {
-      content: "👷‍♀️";
-    }
-    .highlight {
-      background: linear-gradient(120deg, #ff80ab 0%, #fce4ec 100%);
-      padding: 0 2px;
-      border-radius: 3px;
-    }
   </style>
-  <!-- Favicon pake emoji -->
+  <!-- Favicon pake emoji 👷‍♀️ -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷‍♀️</text></svg>">
 </head>
 <body class="font-sans bg-pink-50 scroll-smooth">
@@ -61,9 +52,10 @@
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
     <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
 
-    <!-- TYPEWRITER + HIGHLIGHT -->
-    <p class="mt-2 text-white text-lg font-medium">
-      <span id="type-highlight"></span>
+    <!-- TYPEWRITER + STABILO BLOK -->
+    <p class="mt-2 text-lg font-medium inline-block relative px-2 py-1 rounded">
+      <span class="highlight-block absolute inset-0 rounded"></span>
+      <span id="type-highlight" class="relative text-black"></span>
     </p>
 
     <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
@@ -124,7 +116,6 @@
       <div class="bg-pink-400 p-6 rounded-xl shadow-lg text-white">
         <h3 class="underline text-xl font-bold">Work Part Time</h3>
         <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
-        <!-- Posisi di luar penomoran -->
         <p class="italic mb-2">Karyawan</p>
         <ol class="custom-counter mt-2 space-y-1">
           <li>Melayani transaksi menggunakan mesin kasir</li>
@@ -143,7 +134,7 @@
   <section class="bg-white p-10 text-left">
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
     <div class="flex gap-6">
-      <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
+      <a href="mailto:deviaw2106@gmail.com" title="Email">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10" alt="Gmail">
       </a>
       <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
@@ -158,6 +149,19 @@
     </div>
   </section>
 
+  <!-- STYLE -->
+  <style>
+    .highlight-block {
+      background: #fbb6ce; /* warna stabilo */
+      z-index: 0;
+    }
+    #type-highlight {
+      z-index: 1;
+      position: relative;
+      font-weight: 500;
+    }
+  </style>
+
   <!-- SCRIPT TYPEWRITER -->
   <script>
     const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
@@ -166,10 +170,7 @@
     let index = 0;
     function typeLetter() {
       if (index < sentence.length) {
-        const span = document.createElement("span");
-        span.textContent = sentence[index];
-        span.classList.add("highlight");
-        container.appendChild(span);
+        container.textContent += sentence[index];
         index++;
         setTimeout(typeLetter, 50); // kecepatan ngetik
       }
