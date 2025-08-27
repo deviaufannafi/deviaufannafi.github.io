@@ -3,178 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devi Aufannafi - CV</title>
+  <title>Devi Aufannafi</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    /* HERO */
-    .hero {
+      padding: 30px;
       background-color: #ff1493; /* pink fanta */
-      color: white;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      text-align: left;
     }
-    .hero h1 {
-      font-size: 3em;
-      margin: 0;
+    h1, h2, h3, p {
+      margin: 10px 0;
     }
-    .hero h2 {
-      font-size: 2em;
-      color: #ffc0cb; /* pink muda */
-    }
-    .moving-text {
+    .white { color: white; }
+    .pink { color: #ffb6c1; } /* pink muda */
+    .highlight {
       display: inline-block;
-      background-color: #c71585; /* pink ungu */
+      background: #8b008b; /* ungu-pink blok */
       color: white;
       padding: 5px 10px;
-      animation: slide 4s infinite alternate;
+      animation: slide 5s linear infinite;
     }
     @keyframes slide {
-      from { transform: translateX(-10px); }
-      to { transform: translateX(10px); }
+      0% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+    .box {
+      display: inline-block;
+      padding: 10px 20px;
+      background: none;
+      border: 2px solid white;
+      color: white;
+      margin-top: 20px;
+    }
+    .about {
+      background: #ffb6c1;
+      color: black;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 40px;
     }
     .btn {
       display: inline-block;
       margin-top: 20px;
-      padding: 10px 20px;
-      background: white;
-      color: #ff1493;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    /* ABOUT */
-    .about {
-      background-color: #ffc0cb; /* pink muda */
-      color: black;
-    }
-    .download-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+      padding: 12px 20px;
       background: white;
       color: black;
       text-decoration: none;
-      border-radius: 8px;
       font-weight: bold;
+      border-radius: 6px;
     }
-
-    /* EXPERIENCE */
     .experience {
-      background-color: #c71585; /* pink tua */
+      margin-top: 30px;
+      padding: 20px;
+      background: #ffb6c1;
+      border-radius: 8px;
+      color: black;
+    }
+    .contact {
+      margin-top: 30px;
+      padding: 20px;
+      background: #c71585; /* pink tua */
+      border-radius: 8px;
       color: white;
     }
-    .exp-container {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      padding: 20px 0;
+    .social {
+      margin-top: 15px;
     }
-    .exp-box {
-      background: white;
-      color: black;
-      flex: 0 0 300px;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: left;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: white;
-      color: black;
-    }
-    .contact a {
-      display: block;
-      margin: 10px 0;
+    .social a {
+      margin-right: 15px;
+      color: white;
       text-decoration: none;
-      color: black;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <h1 class="white">Hello,</h1>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Hello, <span style="color:white;">I am</span></h1>
-    <h2>Devi Aufannafi</h2>
-    <p class="moving-text">Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</p>
-    <a href="#about" class="btn">More About Me</a>
-  </section>
+  <h2 class="white">I am <span class="pink">Devi Aufannafi</span></h2>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <h2 style="color:white;">About</h2>
-    <p>I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. I have experience interning on large projects and am ready to contribute to the construction industry.</p>
-    <a href="CV_Devi_Aufannafi.pdf" class="download-btn" download>Download CV</a>
-  </section>
+  <p><span class="highlight">Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</span></p>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="experience">
-    <h2>Experience</h2>
-    <div class="exp-container">
-      <div class="exp-box">
-        <h3>2022-2025</h3>
-        <p>
-          - Sertifikasi Supervisor K3 Konstruksi Jenjang 5 <br>
-          - Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5 <br>
-          - Sertifikasi & pelatihan Tekla Structure <br>
-          - Studi Lapangan Rusun Surakarta (Produktivitas & Tenaga Kerja) <br>
-          - Bimtek Pertolongan di Ketinggian BASARNAS <br>
-          - Studi lapangan alat berat Kampus Polimarin <br>
-          - Sertifikasi TOEIC (LIA) <br>
-          - Seminar & kuliah umum
-        </p>
-      </div>
-      <div class="exp-box">
-        <h3>2025 - Internship</h3>
-        <p>
-          PT PP WIKA (KSO) - 6 bulan <br>
-          - Hitung kebutuhan tulangan balok (Excel) <br>
-          - Volume struktur & arsitektur (Cubicost TAS) <br>
-          - Administrasi: cetak, scan, arsip <br>
-          - Dokumentasi laporan harian <br>
-          - K3 di lapangan <br>
-          - QC pengawasan mutu
-        </p>
-      </div>
-      <div class="exp-box">
-        <h3>2019-2024 - Part Time</h3>
-        <p>
-          Toko Wahyu (ATK & Percetakan) <br>
-          - Melayani kasir & transaksi <br>
-          - Bantu pelanggan cari produk <br>
-          - Kelola stok 100+ produk <br>
-          - Fotocopy, scan, laminating, print <br>
-          - Cetak foto & pengetikan <br>
-          - Menjaga kebersihan & display toko <br>
-          - Buka/tutup toko (Sabtu)
-        </p>
-      </div>
+  <div class="box">More About Me</div>
+
+  <br><br><br>
+
+  <h2 class="white">About</h2>
+  <div class="about">
+    I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. I have experience interning on large projects and am ready to contribute to the construction industry.
+  </div>
+
+  <a class="btn" href="cv.pdf" target="_blank">DOWNLOAD CV</a>
+
+  <div class="experience">
+    <h3>EXPERIENCE</h3>
+    <p><b>2022-2025</b></p>
+    <ul>
+      <li>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</li>
+      <li>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</li>
+      <li>Sertifikasi dan pelatihan Tekla Structure</li>
+      <li>Studi lapangan pembangunan rumah susun pemerintah Kota Surakarta</li>
+      <li>Bimbingan Teknis Pertolongan di Ketinggian (BASARNAS)</li>
+      <li>Studi lapangan kinerja alat berat Politeknik Maritim Negeri Indonesia</li>
+      <li>Sertifikasi TOEIC - Lembaga Bahasa LIA</li>
+      <li>Aktif seminar & kuliah umum</li>
+    </ul>
+    <p><b>2025 Magang / Internship PT PP WIKA (KSO)</b></p>
+    <ul>
+      <li>Menghitung pembesian balok dengan Excel</li>
+      <li>Menghitung volume pekerjaan dengan Cubicost TAS (BIM)</li>
+      <li>Administrasi proyek (cetak, scan, arsip)</li>
+      <li>Dokumentasi laporan harian</li>
+      <li>Kegiatan K3 sesuai arahan tim</li>
+      <li>Membantu QC dalam pengawasan lapangan</li>
+    </ul>
+    <p><b>2019-2024 Part Time - Toko Wahyu (ATK & Percetakan)</b></p>
+    <ul>
+      <li>Kasir & melayani pelanggan</li>
+      <li>Kelola stok 100+ produk</li>
+      <li>Fotocopy, scan, laminating, print</li>
+      <li>Pencetakan foto & pengetikan</li>
+      <li>Kebersihan & keteraturan toko</li>
+      <li>Buka/tutup toko sesuai prosedur</li>
+    </ul>
+  </div>
+
+  <div class="contact">
+    <h3 style="color:black; background:white; display:inline-block; padding:5px 10px; border-radius:5px;">Contact Me</h3>
+    <div class="social">
+      <a href="mailto:deviaw2106@gmail.com">EMAIL</a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290">LINKEDIN</a>
+      <a href="https://www.instagram.com/dviaw/">INSTAGRAM</a>
+      <a href="https://deviaufannafi.github.io/">GITHUB</a>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <a href="mailto:DEVIAW2106@GMAIL.COM">📧 Email: DEVIAW2106@GMAIL.COM</a>
-    <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank">💼 LinkedIn</a>
-    <a href="https://www.instagram.com/dviaw/" target="_blank">📸 Instagram</a>
-    <a href="https://deviaufannafi.github.io/" target="_blank">💻 GitHub</a>
-  </section>
-
+  </div>
 </body>
 </html>
