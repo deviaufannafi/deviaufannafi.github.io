@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👷‍♀️ Hi, I'm Devi Aufannafi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devi Aufannafi Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Animasi typing cuma sekali */
-    .typing {
+    /* Animasi berjalan */
+    .marquee {
       overflow: hidden;
-      border-right: .15em solid white;
+      position: relative;
+      height: 2rem;
+    }
+    .marquee p {
+      display: inline-block;
+      position: absolute;
       white-space: nowrap;
-      animation: typing 4s steps(70, end) forwards, blink .75s step-end infinite;
+      animation: marquee 10s linear infinite;
     }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    @keyframes marquee {
+      from { transform: translateX(0%); }
+      to { transform: translateX(-60%); } /* berhenti cukup sebelum pojok */
     }
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: white; }
-    }
+
     /* Scroll horizontal untuk Experience */
     .scroll-x {
       display: flex;
@@ -33,6 +43,7 @@
       flex: 0 0 85%;
       scroll-snap-align: start;
     }
+
     /* List numbering bulat */
     ol.custom-counter {
       counter-reset: list;
@@ -49,7 +60,7 @@
       position: absolute;
       left: -2rem;
       background: white;
-      color: #1e40af; /* biru tua */
+      color: #be185d; /* pink tua */
       font-weight: bold;
       border-radius: 50%;
       width: 1.5rem;
@@ -60,39 +71,39 @@
     }
   </style>
 </head>
-<body class="font-sans bg-gray-50 scroll-smooth">
+<body class="font-sans bg-pink-50 scroll-smooth">
 
   <!-- HERO -->
-  <section class="bg-blue-600 text-left p-10 min-h-screen flex flex-col justify-center">
+  <section class="bg-pink-500 text-left p-10 min-h-screen flex flex-col justify-center">
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
-    <h1 class="text-5xl text-white font-bold">I am <span class="text-blue-200">Devi Aufannafi</span></h1>
-    <p class="typing text-lg bg-blue-500 text-white mt-4 px-2 py-1 rounded">
-      Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.
-    </p>
-    <a href="#about" class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-blue-100 transition">
+    <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
+    <div class="marquee mt-4 bg-pink-400 text-white px-2 py-1 rounded w-[90%] max-w-2xl">
+      <p>Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</p>
+    </div>
+    <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
       More About Me
     </a>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="bg-blue-100 text-left p-10">
-    <h2 class="text-3xl text-blue-900 font-bold">About</h2>
+  <section id="about" class="bg-pink-100 text-left p-10">
+    <h2 class="text-3xl text-pink-900 font-bold">About</h2>
     <p class="mt-4 text-black max-w-2xl">
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. 
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
-    <a href="CV_Devi_Aufannafi.pdf" download class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-blue-200 transition">
-      Download CV
+    <a href="cv.html" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-200 transition">
+      View CV in Browser
     </a>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="bg-blue-500 text-white p-10">
+  <section class="bg-pink-500 text-white p-10">
     <h2 class="text-3xl font-bold mb-6">Experience</h2>
     <div class="scroll-x">
 
       <!-- Akademik -->
-      <div class="bg-blue-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
         <h3 class="underline text-xl font-bold">Akademik</h3>
         <p class="italic">2022-2025</p>
         <ol class="custom-counter mt-2 space-y-1">
@@ -108,7 +119,7 @@
       </div>
 
       <!-- Magang -->
-      <div class="bg-blue-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
         <h3 class="underline text-xl font-bold">Magang / Internship</h3>
         <p class="italic">2025 - PT PP WIKA (KSO)</p>
         <p class="italic">Durasi: 6 bulan</p>
@@ -123,7 +134,7 @@
       </div>
 
       <!-- Part Time -->
-      <div class="bg-blue-400 p-6 rounded-xl shadow-lg">
+      <div class="bg-pink-400 p-6 rounded-xl shadow-lg">
         <h3 class="underline text-xl font-bold">Work Part Time</h3>
         <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
         <ol class="custom-counter mt-2 space-y-1">
@@ -148,7 +159,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10">
       </a>
       <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" class="w-10 h-10">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10">
       </a>
       <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10">
