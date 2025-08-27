@@ -6,17 +6,16 @@
   <title>Devi Aufannafi Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Animasi typing */
+    /* Animasi typing cuma sekali */
     .typing {
       overflow: hidden;
       border-right: .15em solid white;
       white-space: nowrap;
-      animation: typing 7s steps(80, end) infinite, blink .75s step-end infinite;
+      animation: typing 4s steps(70, end) forwards, blink .75s step-end infinite;
     }
     @keyframes typing {
-      0% { width: 0 }
-      50% { width: 100% }
-      100% { width: 0 }
+      from { width: 0 }
+      to { width: 100% }
     }
     @keyframes blink {
       from, to { border-color: transparent }
@@ -61,7 +60,7 @@
     }
   </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-sans bg-gray-50 scroll-smooth">
 
   <!-- HERO -->
   <section class="bg-blue-600 text-left p-10 min-h-screen flex flex-col justify-center">
@@ -70,20 +69,20 @@
     <p class="typing text-lg bg-blue-500 text-white mt-4 px-2 py-1 rounded">
       Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.
     </p>
-    <button class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-blue-100 transition">
+    <a href="#about" class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-blue-100 transition">
       More About Me
-    </button>
+    </a>
   </section>
 
   <!-- ABOUT -->
-  <section class="bg-blue-100 text-left p-10">
+  <section id="about" class="bg-blue-100 text-left p-10">
     <h2 class="text-3xl text-blue-900 font-bold">About</h2>
     <p class="mt-4 text-black max-w-2xl">
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. 
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
-    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-blue-200 transition">
-      View Full CV
+    <a href="CV_Devi_Aufannafi.pdf" download class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-blue-200 transition">
+      Download CV
     </a>
   </section>
 
@@ -142,13 +141,21 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="bg-white p-10 text-center">
+  <section class="bg-white p-10 text-left">
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
-    <div class="flex justify-center gap-8 text-5xl">
-      <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="w-10 h-10"></a>
-      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-10 h-10"></a>
-      <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-10 h-10"></a>
-      <a href="https://deviaufannafi.github.io/" target="_blank" title="GitHub"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="w-10 h-10"></a>
+    <div class="flex gap-6 text-5xl">
+      <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10">
+      </a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" class="w-10 h-10">
+      </a>
+      <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10">
+      </a>
+      <a href="https://deviaufannafi.github.io/" target="_blank" title="GitHub">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10">
+      </a>
     </div>
   </section>
 
