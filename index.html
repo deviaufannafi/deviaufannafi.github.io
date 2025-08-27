@@ -3,141 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="btn">Download CV</a>
+ <a href="CV_Devi_Aufannafi.pdf" class="download-btn" target="_blank">Download CV</a>
   <style>
-    body {
-      margin: 0;
-      padding: 30px;
-      background-color: #ff1493; /* pink fanta */
-      font-family: Arial, sans-serif;
+    body { margin: 0; font-family: 'Poppins', sans-serif; }
+
+    /* warna */
+    :root {
+      --pink-fanta: #ff2e7e;
+      --pink-muda: #ffcce0;
+      --pink-tua: #cc1e5a;
+      --putih: #ffffff;
+      --hitam: #222;
+    }
+
+    /* hero */
+    .hero {
+      background-color: var(--pink-fanta);
+      color: var(--putih);
+      padding: 120px 60px;
       text-align: left;
     }
-    h1, h2, h3, p {
-      margin: 10px 0;
-    }
-    .white { color: white; }
-    .pink { color: #ffb6c1; } /* pink muda */
-    .highlight {
+    .hero h1 { font-size: 60px; margin: 0; }
+    .hero h2 { font-size: 40px; margin: 5px 0; }
+    .hero h2 span { color: var(--pink-muda); }
+    .moving-text {
       display: inline-block;
-      background: #8b008b; /* ungu-pink blok */
-      color: white;
-      padding: 5px 10px;
-      animation: slide 5s linear infinite;
+      background: var(--pink-tua);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 18px;
+      animation: move 6s linear infinite;
     }
-    @keyframes slide {
+    @keyframes move {
       0% { transform: translateX(0); }
-      50% { transform: translateX(10px); }
+      50% { transform: translateX(20px); }
       100% { transform: translateX(0); }
-    }
-    .box {
-      display: inline-block;
-      padding: 10px 20px;
-      background: none;
-      border: 2px solid white;
-      color: white;
-      margin-top: 20px;
-    }
-    .about {
-      background: #ffb6c1;
-      color: black;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 40px;
     }
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 20px;
-      background: white;
-      color: black;
+      border: 2px solid var(--putih);
+      border-radius: 8px;
+      color: var(--putih);
       text-decoration: none;
       font-weight: bold;
-      border-radius: 6px;
     }
+
+    /* about */
+    .about {
+      background: var(--pink-muda);
+      color: var(--hitam);
+      padding: 100px 60px;
+      text-align: left;
+    }
+    .about h2 { color: var(--putih); font-size: 36px; margin-bottom: 20px; }
+    .about p { max-width: 700px; font-size: 18px; }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--putih);
+      color: var(--hitam);
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* experience slider */
     .experience {
-      margin-top: 30px;
-      padding: 20px;
-      background: #ffb6c1;
-      border-radius: 8px;
-      color: black;
+      background: var(--pink-tua);
+      color: var(--putih);
+      padding: 80px 40px;
     }
+    .experience h2 { text-align: left; margin-bottom: 20px; }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding-bottom: 10px;
+    }
+    .slider::-webkit-scrollbar { display: none; }
+    .card {
+      flex: 0 0 300px;
+      background: var(--pink-muda);
+      color: var(--hitam);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .card h3 { margin-top: 0; }
+
+    /* contact */
     .contact {
-      margin-top: 30px;
-      padding: 20px;
-      background: #c71585; /* pink tua */
-      border-radius: 8px;
-      color: white;
+      background: var(--putih);
+      padding: 60px;
+      text-align: left;
     }
-    .social {
-      margin-top: 15px;
+    .contact h2 { color: var(--hitam); margin-bottom: 20px; }
+    .icons {
+      display: flex;
+      gap: 25px;
     }
-    .social a {
-      margin-right: 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+    .icons a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.2s;
+    }
+    .icons a img:hover {
+      transform: scale(1.2);
     }
   </style>
 </head>
 <body>
-  <h1 class="white">Hello,</h1>
 
-  <h2 class="white">I am <span class="pink">Devi Aufannafi</span></h2>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hello,</h1>
+    <h2>I am <span>Devi Aufannafi</span></h2>
+    <div class="moving-text">Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</div>
+    <br>
+    <a href="#about" class="btn">More About Me</a>
+  </section>
 
-  <p><span class="highlight">Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.</span></p>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. I have experience interning on large projects and am ready to contribute to the construction industry.</p>
+    <a href="cv.pdf" class="download-btn" download>Download CV</a>
+  </section>
 
-  <div class="box">More About Me</div>
-
-  <br><br><br>
-
-  <h2 class="white">About</h2>
-  <div class="about">
-    I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management. I have experience interning on large projects and am ready to contribute to the construction industry.
-  </div>
-
-  <a class="btn" href="cv.pdf" target="_blank">DOWNLOAD CV</a>
-
-  <div class="experience">
-    <h3>EXPERIENCE</h3>
-    <p><b>2022-2025</b></p>
-    <ul>
-      <li>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</li>
-      <li>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</li>
-      <li>Sertifikasi dan pelatihan Tekla Structure</li>
-      <li>Studi lapangan pembangunan rumah susun pemerintah Kota Surakarta</li>
-      <li>Bimbingan Teknis Pertolongan di Ketinggian (BASARNAS)</li>
-      <li>Studi lapangan kinerja alat berat Politeknik Maritim Negeri Indonesia</li>
-      <li>Sertifikasi TOEIC - Lembaga Bahasa LIA</li>
-      <li>Aktif seminar & kuliah umum</li>
-    </ul>
-    <p><b>2025 Magang / Internship PT PP WIKA (KSO)</b></p>
-    <ul>
-      <li>Menghitung pembesian balok dengan Excel</li>
-      <li>Menghitung volume pekerjaan dengan Cubicost TAS (BIM)</li>
-      <li>Administrasi proyek (cetak, scan, arsip)</li>
-      <li>Dokumentasi laporan harian</li>
-      <li>Kegiatan K3 sesuai arahan tim</li>
-      <li>Membantu QC dalam pengawasan lapangan</li>
-    </ul>
-    <p><b>2019-2024 Part Time - Toko Wahyu (ATK & Percetakan)</b></p>
-    <ul>
-      <li>Kasir & melayani pelanggan</li>
-      <li>Kelola stok 100+ produk</li>
-      <li>Fotocopy, scan, laminating, print</li>
-      <li>Pencetakan foto & pengetikan</li>
-      <li>Kebersihan & keteraturan toko</li>
-      <li>Buka/tutup toko sesuai prosedur</li>
-    </ul>
-  </div>
-
-  <div class="contact">
-    <h3 style="color:black; background:white; display:inline-block; padding:5px 10px; border-radius:5px;">Contact Me</h3>
-    <div class="social">
-      <a href="mailto:deviaw2106@gmail.com">EMAIL</a>
-      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290">LINKEDIN</a>
-      <a href="https://www.instagram.com/dviaw/">INSTAGRAM</a>
-      <a href="https://deviaufannafi.github.io/">GITHUB</a>
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <h2>Experience</h2>
+    <div class="slider">
+      <div class="card">
+        <h3>2022–2025</h3>
+        <p>Sertifikasi Supervisor K3 Konstruksi Jenjang 5<br>
+        Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5<br>
+        Sertifikasi dan pelatihan Tekla Structure<br>
+        Studi Lapangan Proyek Rusun Surakarta<br>
+        Bimtek Pertolongan Ketinggian BASARNAS<br>
+        Studi Lapangan Kinerja Alat Berat Polimarin<br>
+        Sertifikasi TOEIC LIA<br>
+        Seminar & Kuliah Umum</p>
+      </div>
+      <div class="card">
+        <h3>2025 – Magang PT PP WIKA (KSO)</h3>
+        <p>Durasi 6 bulan<br>
+        Hitung kebutuhan pembesian & volume dengan Excel + Cubicost TAS<br>
+        Administrasi dokumen proyek<br>
+        Laporan progres harian<br>
+        Kegiatan K3 di lapangan<br>
+        QC dan pengawasan mutu</p>
+      </div>
+      <div class="card">
+        <h3>2019–2024 Part Time</h3>
+        <p>Toko Wahyu (ATK & Percetakan)<br>
+        Melayani transaksi kasir<br>
+        Membantu pelanggan menemukan produk<br>
+        Mengatur stok 100+ produk<br>
+        Fotocopy, scan, laminating, print<br>
+        Cetak foto & ketik dokumen<br>
+        Kebersihan & keteraturan toko</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <div class="icons">
+      <a href="mailto:deviaw2106@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+      <a href="https://www.instagram.com/dviaw/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+      <a href="https://deviaufannafi.github.io/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
+    </div>
+  </section>
+
 </body>
 </html>
