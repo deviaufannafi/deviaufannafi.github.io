@@ -17,6 +17,11 @@
     .scroll-x > div {
       flex: 0 0 85%;
       scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .scroll-x > div:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     /* List numbering bulat */
     ol.custom-counter { counter-reset: list; }
@@ -57,6 +62,44 @@
       border-radius: .15em;
       z-index: -1;
     }
+    /* Cursor blinking */
+    #cursor {
+      display: inline-block;
+      width: 2px;
+      background: white;
+      margin-left: 2px;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+    /* Tombol glow */
+    .btn-glow {
+      background: white;
+      color: #db2777;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(255,255,255,0.8);
+      animation: glow 1.5s infinite alternate;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .btn-glow:hover {
+      transform: scale(1.05);
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px rgba(255,255,255,0.6); }
+      to { box-shadow: 0 0 20px rgba(255,255,255,1); }
+    }
+    /* Icon hover */
+    .icon-hover {
+      transition: transform 0.3s ease;
+    }
+    .icon-hover:hover {
+      transform: scale(1.2);
+    }
   </style>
   <!-- Favicon pake emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷‍♀️</text></svg>">
@@ -72,10 +115,10 @@
 
     <!-- Typewriter: highlight per huruf -->
     <p class="mt-2 text-lg font-medium">
-      <span id="type-highlight" class="text-white"></span>
+      <span id="type-highlight" class="text-white"></span><span id="cursor"></span>
     </p>
 
-    <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
+    <a href="#about" class="mt-6 btn-glow">
       More About Me
     </a>
   </section>
@@ -87,15 +130,15 @@
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
-    <!-- View CV di browser -->
-    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-200 transition">
+    <!-- Download CV -->
+    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 btn-glow">
       Download CV
     </a>
   </section>
 
   <!-- EXPERIENCE -->
   <section class="bg-pink-500 p-10">
-    <h2 class="text-3xl font-bold mb-6 text-pink-900">Experience</h2>
+    <h2 class="text-3xl font-bold mb-6 text-white">Experience</h2>
     <div class="scroll-x">
 
       <!-- Akademik -->
@@ -152,16 +195,16 @@
     <h2 class="text-3xl font-bold text-black mb-6">Contact Me</h2>
     <div class="flex gap-6">
       <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10" alt="Gmail">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10 icon-hover" alt="Gmail">
       </a>
       <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank" title="LinkedIn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10" alt="LinkedIn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="w-10 h-10 icon-hover" alt="LinkedIn">
       </a>
       <a href="https://www.instagram.com/dviaw/" target="_blank" title="Instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10" alt="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-10 h-10 icon-hover" alt="Instagram">
       </a>
       <a href="https://deviaufannafi.github.io/" target="_blank" title="GitHub">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10" alt="GitHub">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="w-10 h-10 icon-hover" alt="GitHub">
       </a>
     </div>
   </section>
@@ -170,7 +213,6 @@
   <script>
     const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
     const container = document.getElementById("type-highlight");
-
     let i = 0;
     (function type() {
       if (i < sentence.length) {
