@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>👷‍♀️ Hi, I'm Devi Aufannafi</title>
+  <title>Hi, I'm Devi Aufannafi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Scroll horizontal untuk Experience */
@@ -41,7 +41,13 @@
       align-items: center;
       justify-content: center;
     }
+    /* Favicon emoji 👷‍♀️ */
+    link[rel="icon"]::after {
+      content: "👷‍♀️";
+    }
   </style>
+  <!-- Favicon pake emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷‍♀️</text></svg>">
 </head>
 <body class="font-sans bg-pink-50 scroll-smooth">
 
@@ -65,15 +71,15 @@
       I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
       I have experience interning on large projects and am ready to contribute to the construction industry.
     </p>
-    <!-- Buka CV di browser (bukan force download) -->
-    <a href="cv.html" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-200 transition">
+    <!-- View CV di browser -->
+    <a href="CV_Devi_Aufannafi.pdf" target="_blank" class="mt-6 inline-block bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-pink-200 transition">
       Download CV
     </a>
   </section>
 
   <!-- EXPERIENCE -->
   <section class="bg-pink-500 p-10">
-    <h2 class="text-3xl font-bold mb-6 text-black">Experience</h2>
+    <h2 class="text-3xl font-bold mb-6 text-pink-900">Experience</h2>
     <div class="scroll-x">
 
       <!-- Akademik -->
@@ -154,7 +160,7 @@
       if (i <= fullText.length) {
         el.textContent = fullText.slice(0, i);
         i++;
-        setTimeout(typeNext, 35); // kecepatan ketik per huruf
+        setTimeout(typeNext, 45); // kecepatan ketik
       }
     }
     typeNext();
