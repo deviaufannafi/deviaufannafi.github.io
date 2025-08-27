@@ -1,208 +1,183 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Devi Aufannafi — Portofolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devi Aufannafi</title>
   <style>
-    :root{
-      --bg:#0f172a;         /* navy gelap */
-      --panel:#111827;      /* panel gelap */
-      --card:#1f2937;       /* kartu */
-      --text:#e5e7eb;       /* teks */
-      --muted:#9ca3af;      /* teks redup */
-      --accent:#f59e0b;     /* kuning aksen */
-      --link:#38bdf8;       /* biru link */
+    body { margin: 0; font-family: Arial, sans-serif; }
+
+    /* HERO */
+    .hero {
+      background-color: #ff1493; /* pink fanta */
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
     }
-    *{box-sizing:border-box} html,body{margin:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      background:var(--bg); color:var(--text); line-height:1.6;
+    .hero h1 {
+      font-size: 2.5em;
     }
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* Header */
-    .hero{
-      padding:32px 20px; background:linear-gradient(180deg,#0b1222,transparent);
-      border-bottom:1px solid #1e293b;
+    .hero .name {
+      color: #ffb6c1; /* pink muda */
+      font-weight: bold;
+      font-size: 3em;
+      display: inline-block;
+      animation: slide 3s infinite alternate;
     }
-    .hero .name{font-size:28px; font-weight:800; letter-spacing:.5px}
-    .hero .tag{color:var(--muted); margin-top:6px}
-
-    /* Layout 2 kolom */
-    .container{max-width:1100px; margin:20px auto; padding:0 20px}
-    .grid{
-      display:grid; gap:20px;
-      grid-template-columns:280px 1fr;
+    @keyframes slide {
+      from { transform: translateX(-10px); }
+      to { transform: translateX(10px); }
     }
-    @media (max-width:860px){ .grid{grid-template-columns:1fr} }
-
-    /* Sidebar */
-    .side{background:var(--panel); border:1px solid #1f2a3c; border-radius:18px; padding:18px}
-    .side h3{margin:8px 0 10px; font-size:16px; color:#cbd5e1; text-transform:uppercase; letter-spacing:.08em}
-    .badge{display:inline-block; padding:4px 10px; border-radius:999px; background:#0b1222; border:1px solid #233047; font-size:12px; margin:4px 6px 6px 0}
-    .list{margin:0; padding-left:18px}
-    .list li{margin:6px 0}
-
-    /* Konten utama */
-    .panel{background:var(--panel); border:1px solid #1f2a3c; border-radius:18px; padding:22px}
-    .panel h2{margin:0 0 14px; font-size:20px; color:#e2e8f0; letter-spacing:.02em}
-
-    /* Card pengalaman */
-    .cards{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
-    @media (max-width:1024px){ .cards{grid-template-columns:repeat(2,1fr)} }
-    @media (max-width:720px){ .cards{grid-template-columns:1fr} }
-
-    .card{
-      background:var(--card); border:1px solid #263445; border-radius:16px; padding:18px;
-      transition:transform .15s ease, box-shadow .15s ease;
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .card:hover{transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,.25)}
-    .role{display:inline-block; background:#0b1222; border:1px solid #2b3b53; color:#cbd5e1; padding:3px 10px; border-radius:999px; font-size:12px; margin-bottom:8px}
-    .company{font-weight:700; font-size:18px; color:#93c5fd}
-    .meta{font-size:13px; color:var(--muted); margin:6px 0 10px}
-    .card ul{margin:0; padding-left:18px}
-    .card li{margin:6px 0}
+    .btn-white {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
 
-    /* Footer */
-    .footer{max-width:1100px; margin:26px auto 60px; padding:0 20px; color:var(--muted); text-align:center}
-    .dot{display:inline-block; width:6px; height:6px; background:var(--accent); border-radius:999px; vertical-align:middle; margin-right:6px}
+    /* ABOUT */
+    .about {
+      background-color: #ffe4ec; /* pink muda */
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .btn-download {
+      background: white;
+      color: black;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    /* EXPERIENCE */
+    .experience {
+      background-color: #c71585; /* pink tua */
+      color: white;
+      padding: 60px 20px;
+    }
+    .experience h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .exp-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+    }
+    .exp-card {
+      min-width: 300px;
+      background: #ff69b4;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    .exp-card h3 {
+      margin-top: 0;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+      color: black;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .socials {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="hero">
-    <div class="container">
-      <div class="name">DEVI AUFANNAFI</div>
-      <div class="tag">D3 Teknologi Konstruksi Bangunan Gedung • Semarang, Jawa Tengah</div>
-    </div>
-  </header>
 
-  <!-- KONTEN -->
-  <main class="container grid">
-    <!-- SIDEBAR -->
-    <aside class="side">
-      <h3>Kontak</h3>
-      <div>📞 085643950021</div>
-      <div>✉️ <a href="mailto:deviaw2106@gmail.com">deviaw2106@gmail.com</a></div>
-      <div>🔗 <a href="https://www.linkedin.com/in/deviaufannafi-944a0a290" target="_blank">LinkedIn</a></div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>HELLO, I AM <span class="name">DEVI AUFANNAFI</span></h1>
+    <br>
+    <a href="#about" class="btn btn-white">MORE ABOUT ME</a>
+  </section>
 
-      <h3>Keahlian Teknis</h3>
-      <span class="badge">AutoCAD</span>
-      <span class="badge">Tekla Structure</span>
-      <span class="badge">Cubicost TAS</span>
-      <span class="badge">Revit</span>
-      <span class="badge">SketchUp</span>
-      <span class="badge">Lumion</span>
-      <span class="badge">MS Project</span>
-      <span class="badge">Excel</span>
-      <span class="badge">K3 Konstruksi</span>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a fresh graduate of D3 in Building Construction Technology with expertise in BIM, K3, and project management.
+      I have experience interning on large projects and am ready to contribute to the construction industry.
+    </p>
+    <a href="cv.pdf" class="btn-download" target="_blank">DOWNLOAD CV</a>
+  </section>
 
-      <h3>Soft Skills</h3>
-      <ul class="list">
-        <li>Teamwork & koordinasi proyek</li>
-        <li>Manajemen waktu</li>
-        <li>Problem solving & analisis lapangan</li>
-        <li>Adaptif & tahan tekanan</li>
-      </ul>
-
-      <h3>Bahasa</h3>
-      <ul class="list">
-        <li>Indonesia (Fluent)</li>
-        <li>English (Intermediate)</li>
-        <li>Arabic (Basic)</li>
-      </ul>
-
-      <h3>Pendidikan</h3>
-      <ul class="list">
-        <li><b>Politeknik Pekerjaan Umum</b><br/>D3 T.K. Bangunan Gedung (2022–sekarang)</li>
-        <li><b>MAN 2 Kota Semarang</b><br/>MIPA (2019–2022), GPA 89</li>
-      </ul>
-    </aside>
-
-    <!-- MAIN -->
-    <section style="display:flex; flex-direction:column; gap:20px;">
-      <!-- Profil singkat -->
-      <div class="panel">
-        <h2>Profil</h2>
-        <p>
-          Mahasiswa/lulusan D3 Teknologi Konstruksi Bangunan Gedung dengan minat pada konstruksi dan teknologi.
-          Berpengalaman magang di proyek skala besar serta part-time non-akademik. Terbiasa memakai AutoCAD, Tekla Structure,
-          Revit, dan Cubicost TAS, serta memahami K3. Siap berkontribusi pada perencanaan, pengawasan, dan koordinasi proyek.
-        </p>
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <h2>EXPERIENCE</h2>
+    <div class="exp-container">
+      <div class="exp-card">
+        <h3>2022-2025</h3>
+        <p>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</p>
+        <p>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</p>
+        <p>Sertifikasi dan pelatihan Tekla Structure</p>
+        <p>Studi Lapangan rumah susun pemerintah Kota Surakarta</p>
+        <p>Bimbingan Teknis Pertolongan di Ketinggian BASARNAS</p>
+        <p>Studi lapangan alat berat Politeknik Maritim Negeri Indonesia</p>
+        <p>Sertifikasi TOEIC LIA</p>
+        <p>Seminar & Kuliah umum</p>
       </div>
-
-      <!-- Pengalaman -->
-      <div class="panel" id="experience">
-        <h2>Experience</h2>
-        <div class="cards">
-          <!-- Magang -->
-          <article class="card">
-            <div class="role">Internship</div>
-            <div class="company">PT PP & PT WIKA (KSO)</div>
-            <div class="meta">Proyek RS Jantung Harapan Kita, Tokushukai — Jakarta Barat • Durasi 6 bulan (±2025)</div>
-            <ul>
-              <li>Menghitung kebutuhan pembesian (balok) menggunakan Excel.</li>
-              <li>Menghitung volume struktur atas & arsitektur dengan <b>Cubicost TAS (BIM)</b>.</li>
-              <li>Dokumentasi & laporan harian progres; cetak, scan, arsip dokumen.</li>
-              <li>Terlibat dalam kegiatan <b>K3</b> dan membantu tim <b>QC</b> memastikan mutu pekerjaan.</li>
-            </ul>
-          </article>
-
-          <!-- Toko Wahyu -->
-          <article class="card">
-            <div class="role">Part-time</div>
-            <div class="company">Toko Wahyu (ATK & Percetakan)</div>
-            <div class="meta">2024 – sekarang</div>
-            <ul>
-              <li>Operasional kasir & layanan pelanggan; pencetakan foto, print, scan, laminasi.</li>
-              <li>Kelola stok >100 produk; jaga kerapian & display; buka/tutup toko (Sabtu).</li>
-            </ul>
-          </article>
-
-          <!-- Toko Plastik Rahayu -->
-          <article class="card">
-            <div class="role">Karyawan</div>
-            <div class="company">Toko Plastik Rahayu</div>
-            <div class="meta">2025</div>
-            <ul>
-              <li>Layanan pelanggan dan penataan/penempatan barang.</li>
-              <li>Melayani serta mencatat transaksi pembayaran.</li>
-            </ul>
-          </article>
-
-          <!-- Toko Sembako Sri Aris -->
-          <article class="card">
-            <div class="role">Karyawan</div>
-            <div class="company">Toko Sembako Sri Aris</div>
-            <div class="meta">2018</div>
-            <ul>
-              <li>Membantu pelanggan menemukan produk dan melayani pembayaran.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-
-      <!-- Sertifikasi & Aktivitas -->
-      <div class="panel">
-        <h2>Sertifikasi & Aktivitas</h2>
-        <ul class="list">
-          <li>Supervisor K3 Konstruksi (J5) — 2025</li>
-          <li>Pengawas Pekerjaan Struktur Bangunan Gedung (J5) — 2025</li>
-          <li>Pelatihan Tekla Structure — 2024</li>
-          <li>Bimtek Pertolongan di Ketinggian (BASARNAS) — 2023</li>
-          <li>Studi lapangan Rusun Surakarta: produktivitas & tenaga kerja — 2024</li>
-          <li>Studi kinerja alat berat (PMNI) — 2022</li>
-          <li>TOEIC — 2022; aktif seminar (Public Speaking, Penerapan IPTEK Nuklir, dll.)</li>
-          <li>Karang Taruna; Panitia 17 Agustus 2025; PKM Renovasi Posko Evakuasi Getasan; Panitia Remaja Nuzulul Quran.</li>
+      <div class="exp-card">
+        <h3>2025 - Internship</h3>
+        <p>PT PP WIKA (KSO) - 6 bulan</p>
+        <ul>
+          <li>Menghitung pembesian struktur (Excel)</li>
+          <li>Menghitung volume (Cubicost TAS)</li>
+          <li>Administrasi dokumen proyek</li>
+          <li>Laporan progres harian</li>
+          <li>Kegiatan K3 lapangan</li>
+          <li>Membantu tim QC di lapangan</li>
         </ul>
       </div>
-    </section>
-  </main>
+      <div class="exp-card">
+        <h3>2019-2024</h3>
+        <p><b>Toko Wahyu (ATK & Percetakan)</b></p>
+        <ul>
+          <li>Melayani transaksi mesin kasir</li>
+          <li>Membantu pelanggan mencari produk</li>
+          <li>Mengelola stok 100+ produk</li>
+          <li>Fotocopy, scan, laminating, print</li>
+          <li>Menjaga kebersihan toko</li>
+          <li>Membuka & menutup toko</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <div class="footer">
-    <span class="dot"></span> Dibuat cepat dengan GitHub Pages — © Devi Aufannafi
-  </div>
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>CONTACT ME</h2>
+    <div class="socials">
+      <a href="mailto:deviaw2106@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/devi-aufannafi-944a0a290" target="_blank">💼 LinkedIn</a>
+      <a href="https://www.instagram.com/dviaw/" target="_blank">📷 Instagram</a>
+      <a href="https://deviaufannafi.github.io/" target="_blank">💻 GitHub</a>
+    </div>
+  </section>
+
 </body>
 </html>
