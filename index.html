@@ -45,6 +45,11 @@
     link[rel="icon"]::after {
       content: "👷‍♀️";
     }
+    .highlight {
+      background: linear-gradient(120deg, #ff80ab 0%, #fce4ec 100%);
+      padding: 0 2px;
+      border-radius: 3px;
+    }
   </style>
   <!-- Favicon pake emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷‍♀️</text></svg>">
@@ -56,8 +61,10 @@
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
     <h1 class="text-5xl text-white font-bold">I am <span class="text-pink-200">Devi Aufannafi</span></h1>
 
-    <!-- Typewriter per huruf + background ikut -->
-    <span id="type-sentence" class="inline-block mt-4 bg-pink-400 text-white px-2 py-1 rounded text-lg"></span>
+    <!-- TYPEWRITER + HIGHLIGHT -->
+    <p class="mt-2 text-white text-lg font-medium">
+      <span id="type-highlight"></span>
+    </p>
 
     <a href="#about" class="mt-6 bg-white text-pink-600 px-6 py-3 rounded-lg shadow-md w-fit hover:bg-pink-100 transition">
       More About Me
@@ -151,33 +158,24 @@
     </div>
   </section>
 
-<!-- TYPEWRITER + HIGHLIGHT -->
-<p class="mt-2 text-white text-lg font-medium">
-  <span id="type-highlight"></span>
-</p>
+  <!-- SCRIPT TYPEWRITER -->
+  <script>
+    const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
+    const container = document.getElementById("type-highlight");
 
-<style>
-  .highlight {
-    background: linear-gradient(120deg, #ff80ab 0%, #fce4ec 100%);
-    padding: 0 2px;
-    border-radius: 3px;
-  }
-</style>
-
-<script>
-  const sentence = "Fresh graduate D3 Building Construction Technology, Politeknik Pekerjaan Umum.";
-  const container = document.getElementById("type-highlight");
-
-  let index = 0;
-  function typeLetter() {
-    if (index < sentence.length) {
-      const span = document.createElement("span");
-      span.textContent = sentence[index];
-      span.classList.add("highlight");
-      container.appendChild(span);
-      index++;
-      setTimeout(typeLetter, 50); // kecepatan ngetik
+    let index = 0;
+    function typeLetter() {
+      if (index < sentence.length) {
+        const span = document.createElement("span");
+        span.textContent = sentence[index];
+        span.classList.add("highlight");
+        container.appendChild(span);
+        index++;
+        setTimeout(typeLetter, 50); // kecepatan ngetik
+      }
     }
-  }
-  typeLetter();
-</script>
+    typeLetter();
+  </script>
+
+</body>
+</html>
