@@ -2,83 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>👷‍♀️ Hi, I'm Devi Aufannafi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: #0f172a; /* Smoky Navy */
+      color: white;
     }
 
-    /* Scroll horizontal untuk Experience */
-    .scroll-x {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
-    }
-    .scroll-x > div {
-      flex: 0 0 85%;
-      scroll-snap-align: start;
+    .section-title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
     }
 
-    /* Nomor bulat */
-    ol.custom-counter { counter-reset: list; }
-    ol.custom-counter li {
-      counter-increment: list;
-      position: relative;
-      margin-left: 2rem;
-      margin-bottom: .5rem;
-      list-style: none;
-    }
-    ol.custom-counter li::before {
-      content: counter(list);
-      position: absolute;
-      left: -2rem;
-      background: white;
-      color: #1e3a8a; /* Navy */
-      font-weight: bold;
-      border-radius: 50%;
-      width: 1.5rem;
-      height: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .experience-card {
+      background-color: #334155; /* Abu ke-biru */
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Typewriter Highlight */
-    .hl-letter {
-      position: relative;
-      display: inline-block;
-      padding: 0 .02em;
-    }
-    .hl-letter::after {
-      content: "";
-      position: absolute;
-      left: 0; right: 0;
-      bottom: 0.05em;
-      height: 0.6em;
-      background: #93c5fd; /* Soft blue highlight */
-      border-radius: .15em;
-      z-index: -1;
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
     }
 
-    /* Cursor blink */
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background: white;
-      margin-left: 2px;
-      animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-
-    /* Button */
     .btn-glow {
       background: white;
       color: #1e3a8a;
@@ -91,33 +44,42 @@
       background: #dbeafe;
       box-shadow: 0 0 20px rgba(30,58,138,0.9);
     }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: white;
+      margin-left: 2px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
   </style>
 
-  <!-- Favicon Emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👷‍♀️</text></svg>">
 </head>
 
-<body class="font-sans bg-blue-50 scroll-smooth">
+<body class="scroll-smooth">
 
   <!-- HERO -->
-  <section class="bg-blue-900 text-left p-10 min-h-screen flex flex-col justify-center">
+  <section class="bg-[#1e3a8a] text-left p-10 min-h-screen flex flex-col justify-center">
     <h1 class="text-5xl text-white font-bold">Hello,</h1>
-    <h1 class="text-5xl text-white font-bold">
-      I am <span class="text-blue-300">Devi Aufannafi</span>
-    </h1>
-
+    <h1 class="text-5xl text-white font-bold">I am <span class="text-blue-200">Devi Aufannafi</span></h1>
     <p class="mt-2 text-lg font-medium text-white">
       <span id="type-highlight"></span><span class="cursor"></span>
     </p>
-
     <a href="#about" class="mt-6 btn-glow w-fit">More About Me</a>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="bg-blue-100 text-center p-10">
-    <h2 class="text-3xl text-blue-900 font-bold">About</h2>
-    <p class="mt-4 text-black max-w-2xl mx-auto">
-      Saya merupakan fresh graduate D3 Teknologi Konstruksi Bangunan Gedung dari Politeknik Pekerjaan Umum
+  <section id="about" class="bg-[#1e293b] text-center p-10">
+    <h2 class="section-title">About</h2>
+    <p class="mt-4 text-gray-200 max-w-2xl mx-auto">
+      Saya merupakan fresh graduate D3 Teknologi Konstruksi Bangunan Gedung dari Politeknik Pekerjaan Umum,
       dengan keahlian di bidang BIM, K3, dan manajemen proyek. Berpengalaman magang di proyek berskala besar
       serta siap berkontribusi di dunia konstruksi.
     </p>
@@ -125,61 +87,52 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="bg-blue-900 p-10">
-    <h2 class="text-3xl font-bold mb-6 text-blue-100">Experience</h2>
-    <div class="scroll-x">
+  <section class="bg-[#0f172a] p-10">
+    <h2 class="section-title text-center">Experience</h2>
+    <div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Akademik -->
-      <div class="bg-blue-800 p-6 rounded-xl shadow-lg text-white">
-        <h3 class="underline text-xl font-bold">Akademik</h3>
-        <p class="italic">2022-2025</p>
-        <ol class="custom-counter mt-2 space-y-1">
+      <div class="experience-card">
+        <h3 class="text-xl font-bold mb-1">Akademik</h3>
+        <p class="italic mb-3 text-gray-300">2022 - 2025</p>
+        <ul class="list-disc list-inside text-gray-200 space-y-1">
           <li>Sertifikasi Supervisor K3 Konstruksi Jenjang 5</li>
           <li>Sertifikasi Pengawas Pekerjaan Struktur Bangunan Gedung Jenjang 5</li>
-          <li>Sertifikasi & pelatihan Tekla Structure</li>
+          <li>Sertifikasi Tekla Structure</li>
           <li>Studi lapangan proyek rumah susun pemerintah Kota Surakarta</li>
           <li>Bimbingan Teknis Pertolongan di Ketinggian (BASARNAS)</li>
-          <li>Analisis produktivitas alat berat proyek kampus Politeknik Maritim</li>
-          <li>Sertifikasi TOEIC oleh Lembaga Bahasa LIA</li>
-          <li>Aktif mengikuti seminar & kuliah umum</li>
-        </ol>
+          <li>Analisis kinerja alat berat proyek Politeknik Maritim</li>
+          <li>Sertifikasi TOEIC LIA</li>
+        </ul>
       </div>
 
-      <!-- Magang -->
-      <div class="bg-blue-800 p-6 rounded-xl shadow-lg text-white">
-        <h3 class="underline text-xl font-bold">Magang / Internship</h3>
-        <p class="italic">2025 - PT PP WIKA (KSO)</p>
-        <p class="italic">Durasi: 6 bulan</p>
-        <ol class="custom-counter mt-2 space-y-1">
-          <li>Menghitung kebutuhan pembesian tulangan (balok) menggunakan Excel</li>
+      <div class="experience-card">
+        <h3 class="text-xl font-bold mb-1">Magang / Internship</h3>
+        <p class="italic mb-3 text-gray-300">2025 - PT PP WIKA (KSO)</p>
+        <ul class="list-disc list-inside text-gray-200 space-y-1">
+          <li>Menghitung kebutuhan pembesian tulangan (balok) dengan Excel</li>
           <li>Menghitung volume pekerjaan dengan Cubicost TAS (BIM)</li>
-          <li>Membantu administrasi proyek (cetak, scan, arsip dokumen)</li>
-          <li>Menyusun laporan progres pekerjaan harian</li>
-          <li>Terlibat dalam penerapan K3 proyek</li>
-          <li>Membantu QC mengawasi mutu pekerjaan lapangan</li>
-        </ol>
+          <li>Membantu pekerjaan administrasi & laporan harian</li>
+          <li>Ikut kegiatan K3 dan QC di lapangan</li>
+        </ul>
       </div>
 
-      <!-- Part Time -->
-      <div class="bg-blue-800 p-6 rounded-xl shadow-lg text-white">
-        <h3 class="underline text-xl font-bold">Work Part Time</h3>
-        <p class="italic">2019-2024 - Toko Wahyu (ATK & Percetakan)</p>
-        <p class="italic mb-2">Karyawan</p>
-        <ol class="custom-counter mt-2 space-y-1">
+      <div class="experience-card">
+        <h3 class="text-xl font-bold mb-1">Work Part Time</h3>
+        <p class="italic mb-3 text-gray-300">2019-2024 - Toko Wahyu</p>
+        <ul class="list-disc list-inside text-gray-200 space-y-1">
           <li>Melayani transaksi & membantu pelanggan</li>
           <li>Mengelola stok lebih dari 100 produk</li>
-          <li>Fotocopy, scan, laminating, dan print</li>
-          <li>Mengerjakan pencetakan foto dan dokumen</li>
+          <li>Fotocopy, scan, laminating, print</li>
+          <li>Pencetakan foto & pengetikan dokumen</li>
           <li>Menjaga kebersihan dan kerapian toko</li>
-          <li>Membuka & menutup toko setiap Sabtu</li>
-        </ol>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="bg-white p-10 text-left">
-    <h2 class="text-3xl font-bold text-blue-900 mb-6">Contact Me</h2>
+    <h2 class="text-3xl font-bold text-[#1e3a8a] mb-6">Contact Me</h2>
     <div class="flex gap-6">
       <a href="mailto:DEVIAW2106@GMAIL.COM" title="Email">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="w-10 h-10" alt="Gmail">
@@ -203,19 +156,11 @@
     (function type() {
       if (i < sentence.length) {
         const ch = sentence[i];
-        if (ch === " ") {
-          container.appendChild(document.createTextNode(" "));
-        } else {
-          const span = document.createElement("span");
-          span.className = "hl-letter";
-          span.textContent = ch;
-          container.appendChild(span);
-        }
+        container.appendChild(document.createTextNode(ch));
         i++;
         setTimeout(type, 50);
       }
     })();
   </script>
-
 </body>
 </html>
